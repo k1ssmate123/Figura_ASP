@@ -1,6 +1,18 @@
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+using FiguraRestaurant.Repositories;
 
-app.MapGet("/", () => "Hello World!");
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllersWithViews();
+
+
+builder.Services.AddDbContext<UserDbContext>();
+builder.Services.AddTransient<IUserRepository, UserRepository>();
+
+var app = builder.Build();  
+app.UseRouting();
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{action=Index}/{id?}",
+    defaults: new { controller = "Site" });
 
 app.Run();

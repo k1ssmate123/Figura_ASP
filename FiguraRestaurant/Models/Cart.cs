@@ -7,8 +7,11 @@ namespace FiguraRestaurant.Models
         [Key]
         public int Id { get; set; }
 
-        public int UserId { get; set; }
+        public User User { get; set; }
 
-        public List<Food> Foods {get;set;}
+        public List<Food>? Foods { get; set; }
+
+
+        public double FullPrice { get => Foods.Sum(x => x.Price); }
     }
 }
