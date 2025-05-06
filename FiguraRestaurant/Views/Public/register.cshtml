@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Regisztráció</title>
+</head>
+<body>
+    <form asp-controller="User" asp-action="Register" method="post">
+       
+        <label for="Name">Név: </label>
+        <input type="text" id="Name" name="Name" />
+
+        <label for="Email">Email cím: </label>
+        <input type="text" id="Email" name="Email" />
+
+        <label for="Password">Jelszó: </label>
+        <input type="password" id="Password" name="Password" />
+
+        <input type="submit" value="Regisztráció" />
+    </form>
+</body>
+</html>

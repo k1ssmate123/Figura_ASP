@@ -5,12 +5,9 @@ namespace FiguraRestaurant.Repositories
 {
     public class UserDbContext : DbContext
     {
-        public DbSet<User> Users;
+        public DbSet<User> Users { get; set; }
 
-        public UserDbContext()
-        {
-            Database.EnsureCreated();
-        }
+        public UserDbContext(DbContextOptions<UserDbContext> options) : base(options) { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -7,8 +7,14 @@
 	<title>Document</title>
 </head>
 <body>
-	Hello world!
+	<form asp-controller="User" asp-action="Login" method="post">
+		<label for="email">Email cím: </label><input type="text" name="email" id="email">
+		<label for="password">Jelszó: </label><input type="password" name="password" id="password">
+		<input type="submit" value="Bejelentkezés" class="btn btn-primary btn-success">
+	</form>
+	
 
-	<a class="btn" href="/login">Login</a>
+	<a href="/register" class="btn btn-primary">Regisztrálás</a>
+
 </body>
 </html>

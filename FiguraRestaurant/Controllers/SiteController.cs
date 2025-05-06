@@ -8,5 +8,15 @@ namespace FiguraRestaurant.Controllers
         {
             return View("/Views/Public/index.cshtml");
         }
+
+        public IActionResult Login()
+        {
+            return View("/Views/Public/login.cshtml");
+        }
+
+        public IActionResult Register()
+        {
+            return View("/Views/Public/register.cshtml");
+        }
     }
 }

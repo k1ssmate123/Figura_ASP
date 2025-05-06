@@ -26,8 +26,9 @@ namespace FiguraRestaurant.Repositories
             return user;
         }
 
-        public void Register(User user)
+        public void Register(string name, string email, string password)
         {
+            User user = new User { Name = name, Email = email, Password = password };
             var hasher = new PasswordHasher<User>();
             user.Password = hasher.HashPassword(user, user.Password);
             _context.Add(user);

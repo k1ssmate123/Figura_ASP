@@ -6,6 +6,6 @@ namespace FiguraRestaurant.Repositories
     {
         User? GetUser(int id);
         User? Login(string email, string password);
-        void Register(User user);
+        void Register(string name, string email, string password);
     }
 }
