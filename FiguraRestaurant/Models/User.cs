@@ -9,7 +9,7 @@ namespace FiguraRestaurant.Models
         public string? Name{ get; set; }
         public string? Email { get; set; }
         public string? Password { get; set; }
-        public List<Food> Cart { get; set; }
+        public List<Food>? Cart { get; set; }
 
     }
 }

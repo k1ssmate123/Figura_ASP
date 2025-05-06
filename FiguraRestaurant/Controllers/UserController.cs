@@ -20,13 +20,18 @@ namespace FiguraRestaurant.Controllers
             User currentUser = repo.Login(email, password);
             if (currentUser != null)
             {
-                HttpContext.Session.SetString("id",currentUser.Id.ToString());
+                HttpContext.Session.SetString("id","currentUser.Id.ToString()");
+                HttpContext.Session.SetString("name", "currentUser.Name");
+                var test = HttpContext.Session.GetString("id");
+
                 return RedirectToAction(nameof(Index), "Site");
             }
             else
             {
                 return RedirectToAction(nameof(Login),"Site");
             }
+
+          
         }
 
         [HttpPost]
